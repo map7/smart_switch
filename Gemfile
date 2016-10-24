@@ -45,4 +45,5 @@ group :development do
   gem 'spring'
 end
 
-gem 'rubyserial' # Serial connection
+gem 'rubyserial'                # Serial connection
+gem 'google-webfonts-rails'     # Add nice fonts
