@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster', cursive;
+}
+
+.notice{
+    width: 100%;
+    height: 15px;
+    background: green;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;                 
+}
+
+.section{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.switch_btn{
+    text-decoration: none;
+    background: #d8b30f;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 9px;
+}
