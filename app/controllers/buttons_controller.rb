@@ -4,21 +4,32 @@ class ButtonsController < ApplicationController
   def on
     button = Button.find(params[:id])
     button.on
-    redirect_to buttons_url
+    redirect_to buttons_url, notice: "Button turned on"
   end
 
   def off
     button = Button.find(params[:id])
     button.off
-    redirect_to buttons_url
+    redirect_to buttons_url, notice: "Button turned off"
   end
 
   def toggle
     button = Button.find(params[:id])
     button.toggle
-    redirect_to buttons_url
+    redirect_to buttons_url, notice: "Button turned #{button.power_status ? 'on' : 'off'}"
   end
 
+  def all_on
+    Button.all.each { |btn| btn.on }
+    flash[:notice]
+    redirect_to buttons_url, notice: "All buttons turned on"
+  end
+
+  def all_off
+    Button.all.each { |btn| btn.off }
+    flash[:notice]
+    redirect_to buttons_url, notice: "All buttons turned off"
+  end
   
   # GET /buttons
   # GET /buttons.json

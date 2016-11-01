@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       get 'off'
       get 'toggle'
     end
+
+    collection do 
+      get 'all_on'
+      get 'all_off'
+    end
   end
 
   get 'command', :to => "command#cmd", via: [:get]
