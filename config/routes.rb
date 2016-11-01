@@ -13,9 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'command', :to => "command#cmd", via: [:get]
-  match 'command/:cmd', :to => "command#cmd", via: [:get]
-  root 'command#cmd'
+  root 'buttons#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,23 +1,24 @@
 <h1>Smart Switch</h1>
 
-<%= link_to 'New Button', new_button_path %>
-<br />
-<br />
+<div class="action_panel">
+  <%= link_to 'New Button', new_button_path, class: "action_btn" %>
+</div>
 
-<%= link_to "ALL ON", all_on_buttons_path(), class: "switch_btn"%>
-<%= link_to "ALL OFF", all_off_buttons_path(), class: "switch_btn"%>
-<br />
-<br />
-<br />
+<div class="action_panel">
+  <%= link_to "ALL ON", all_on_buttons_path(), class: "switch_btn"%>
+  <%= link_to "ALL OFF", all_off_buttons_path(), class: "switch_btn"%>
+</div>
 
 <div id="buttons">
   <% @buttons.each do |button| %>
     <div id="button" class="section">
-      <%= link_to button.name, button %>
+      <%= link_to button.name, button, class: "action_btn" %>
       <%= link_to "ON", on_button_path(button), class: "switch_btn" %>
       <%= link_to "OFF", off_button_path(button), class: "switch_btn" %>
       <%= link_to "TOGGLE", toggle_button_path(button), class: "switch_btn" %>
-      Status: <%= button.power_status %>
+      <span class="status_<%= button.power_status %>">
+        Status: <%= button.power_status ? 'ON' : 'OFF' %>
+      </span>
     </div>
   <% end %>
 </div>

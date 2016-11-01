@@ -36,9 +36,39 @@ body{
     margin-bottom: 30px;
 }
 
+.action_panel {
+    padding-bottom: 35px;
+}
+.action_btn {
+    text-decoration: none;
+    background: #007700;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 9px;
+}
+
 .switch_btn{
     text-decoration: none;
     background: #d8b30f;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 9px;
+}
+
+.status_true{
+    width: 100px;
+    background: white;
+    color: black;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 9px;
+}
+
+.status_false{
+    width: 100px;
+    background: black;
     color: white;
     padding: 12px;
     margin: 10px;
