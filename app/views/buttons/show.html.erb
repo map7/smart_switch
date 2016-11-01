@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @button.name %>
+</p>
+
+<p>
+  <strong>On command:</strong>
+  <%= @button.on_command %>
+</p>
+
+<p>
+  <strong>Off command:</strong>
+  <%= @button.off_command %>
+</p>
+
+<p>
+  <strong>Power status:</strong>
+  <%= @button.power_status %>
+</p>
+
+<%= link_to 'Edit', edit_button_path(@button) %> |
+<%= link_to 'Back', buttons_path %>

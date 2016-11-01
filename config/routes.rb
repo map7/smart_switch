@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :buttons
+  resources :buttons
+
   get 'command', :to => "command#cmd", via: [:get]
   match 'command/:cmd', :to => "command#cmd", via: [:get]
   root 'command#cmd'
