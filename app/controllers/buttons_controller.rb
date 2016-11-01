@@ -1,6 +1,25 @@
 class ButtonsController < ApplicationController
   before_action :set_button, only: [:show, :edit, :update, :destroy]
 
+  def on
+    button = Button.find(params[:id])
+    button.on
+    redirect_to buttons_url
+  end
+
+  def off
+    button = Button.find(params[:id])
+    button.off
+    redirect_to buttons_url
+  end
+
+  def toggle
+    button = Button.find(params[:id])
+    button.toggle
+    redirect_to buttons_url
+  end
+
+  
   # GET /buttons
   # GET /buttons.json
   def index

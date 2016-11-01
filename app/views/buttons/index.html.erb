@@ -6,9 +6,10 @@
   <% @buttons.each do |button| %>
     <div id="button" class="section">
       <%= link_to button.name, button %>
-      <a class="switch_btn" href="/command/<%= button.on_command %>">ON</a>
-      <a class="switch_btn" href="/command/<%= button.off_command %>">OFF</a>
-      <%= button.power_status %>
+      <%= link_to "ON", on_button_path(button), class: "switch_btn" %>
+      <%= link_to "OFF", off_button_path(button), class: "switch_btn" %>
+      <%= link_to "TOGGLE", toggle_button_path(button), class: "switch_btn" %>
+      Status: <%= button.power_status %>
     </div>
   <% end %>
 </div>

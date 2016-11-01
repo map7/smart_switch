@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :buttons
-  resources :buttons
+  resources :buttons do 
+    member do 
+      get 'on'
+      get 'off'
+      get 'toggle'
+    end
+  end
 
   get 'command', :to => "command#cmd", via: [:get]
   match 'command/:cmd', :to => "command#cmd", via: [:get]
