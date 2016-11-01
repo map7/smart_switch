@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_button_path(@button) %> |
+<%= link_to 'Destroy', @button, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', buttons_path %>
+
 <p>
   <strong>Name:</strong>
   <%= @button.name %>
@@ -20,5 +25,3 @@
   <%= @button.power_status %>
 </p>
 
-<%= link_to 'Edit', edit_button_path(@button) %> |
-<%= link_to 'Back', buttons_path %>

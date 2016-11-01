@@ -25,5 +25,7 @@ class CommandController < ApplicationController
         flash[:notice] = "Switch 2 is OFF"
       end
     end
+
+    redirect_to :buttons
   end
 end
