@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  on_command: MyString
+  off_command: MyString
+  power_status: false
+
+two:
+  name: MyString
+  on_command: MyString
+  off_command: MyString
+  power_status: false
