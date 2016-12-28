@@ -2,7 +2,7 @@ class CommandController < ApplicationController
   def cmd
     @result = params[:cmd]
 
-    port = Serial.new '/dev/ttyUSB0', 38400
+    port = Serial.new '/dev/smart_switch', 38400
 
     if @result == 'a'
       port.write('1')
