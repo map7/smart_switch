@@ -20,5 +20,64 @@
 
 3. Start rails server
    : rails s -b 10.1.1.10
-   
 
+** Setup shortcuts
+
+On my remote I've setup in Flirc.tv the shortcuts
+
+Ctrl + Super + c = computer (tv + amp)
+Ctrl + Super + l = light
+
+Shortcuts
+
+Light toggle
+: curl http://10.1.1.10:3000/buttons/3/toggle
+
+TV toggle
+: curl http://10.1.1.10:3000/buttons/2/toggle
+
+I use the package 'xbindkeys' to set the shortcuts and then I can control it with the remote
+
+Add the following to ~/.xbindkeysrc
+
+# TV
+"curl http://10.1.1.10:3000/buttons/2/toggle"
+  Control+Mod4 + c  
+
+# Light
+"curl http://10.1.1.10:3000/buttons/3/toggle"
+  Control+Mod4 + l
+
+
+This depends on what windows manager you use. I'm using LXQT on my media center. 
+
+LXQt -> Preferences -> LXQt Settings -> Session Settings.
+
+In here you can add more autostart items such as;
+: xbindkeys
+: cd ~/code/smart_switch;rails s -b 10.1.1.10
+
+** Adding to startup
+
+Add the following to /lib/systemd/system/smart_switch.service
+
+: [Unit]
+: Description=Smart Switch
+: Requires=network.target
+:  
+: [Service]
+: Type=simple
+: User=kodi
+: Group=kodi
+: WorkingDirectory=/home/kodi/code/smart_switch
+: ExecStart=/bin/bash -lc 'bundle exec rails server --bind 10.1.1.10'
+: TimeoutSec=30
+: RestartSec=15s
+: Restart=always
+:  
+: [Install]
+: WantedBy=multi-user.target
+
+Now type the following
+: sudo systemctl enable smart_switch.service
+: sudo service smart_switch start
