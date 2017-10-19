@@ -13,9 +13,12 @@
    : ACTION=="add", ATTRS{idVendor}=="1d6b", ATTRS{idProduct}=="0002", SYMLINK+="smart_switch"
    (Change 1d6b and 0002 with your idVendor and idProduct)
    
-   Now replug in your smart switch and it should have a symlink as /dev/smart_switch. This is what is used in this program.
+    Now replug in your smart switch and it should have a symlink as /dev/smart_switch. This is what is used in this program.
 
-2. Start rails server
-   : rails s
+2. Add your user to dialout group
+   Edit the /etc/group and add your user then relogin.
+
+3. Start rails server
+   : rails s -b 10.1.1.10
    
 
